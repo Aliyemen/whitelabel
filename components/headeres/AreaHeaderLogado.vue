@@ -10,12 +10,12 @@ v-app-bar#app-toolbar-id(
   v-container
     v-row(justify="space-between" align="center") 
       v-col(cols="auto")
-        img.logo(
-        height="32"
-        width="120px"
-        src="https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2022%2F01%2F3179b1043804c7652675892f7748b79a.png?alt=media&token=d43fef04-4ccb-4e81-8861-b4f86646382e"
-        NuxtLink  to="/"
-        )
+        nuxt-link(to="/")
+          img.logo(
+          height="32"
+          width="120px"
+          src="https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2022%2F01%2F3179b1043804c7652675892f7748b79a.png?alt=media&token=d43fef04-4ccb-4e81-8861-b4f86646382e"
+          )
       v-col( align="center")
         v-text-field.searchbar-width(
           align-self,
@@ -82,8 +82,8 @@ v-app-bar#app-toolbar-id(
           v-row
             v-col.barra(cols="auto")
               v-divider.mx-2(vertical)
-            v-col(cols="auto" v-for="(item ,  index ) in items", :key="index", link :to="item.to" )
-              a.grey--text.text--darken-3.mx-0.mx-lg-2.font-weight-medium {{item.title}}
+            v-col(cols="auto" v-for="(item ,  index ) in items", :key="index", link  )
+              nuxt-link(:to="item.to").grey--text.text--darken-3.mx-0.mx-lg-2.font-weight-medium {{item.title}}
 </template>
 
 <script>
