@@ -1,12 +1,12 @@
 <template lang="pug">
  div
    h1 aqui esta Login
-   v-btn(v-if="!user.name" @class="entrarFake") Enterar fake
+   v-btn(v-if=" !user || !user.name" @click="logIn()") Enterar fake
     
 </template>
 
 <script>
-import {mapActions} from 'vuex'
+import {mapGetters, mapActions} from 'vuex'
 
 export default {
   layout (context) {
@@ -19,8 +19,12 @@ export default {
   },
    methods: {
       ...mapActions({
-      entrarFake: "modules/user/entrarFake",
-    })
+       logInFake: "modules/user/logInFake",
+    }),
+    logIn(){
+      this.logInFake();
+      
+    }
    }
   
     
