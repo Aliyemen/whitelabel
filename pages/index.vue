@@ -80,6 +80,8 @@
 <script>
 export default {
   name: 'IndexPage',
-  layouts:'default'
+  layout (context) {
+    return 'default'
+  }
 }
 </script>

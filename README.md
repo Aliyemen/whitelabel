@@ -7,13 +7,17 @@
 $ npm install
 
 # serve with hot reload at localhost:3000
-$ npm run dev
+$ npm run dev -- --mode development
+
 
 # excutar test unitario
 $ npm run test
 
 # build for production and launch server
-$ npm run build
+$ npm run build  
+
+npm run build -- --mode development  
+
 $ npm run start
 
 # generate static project
