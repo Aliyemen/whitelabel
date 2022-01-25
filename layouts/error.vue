@@ -13,7 +13,7 @@
 <script>
 export default {
   name: 'EmptyLayout',
-  layout: 'empty',
+  layout: 'home',
   props: {
     error: {
       type: Object,

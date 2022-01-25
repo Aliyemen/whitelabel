@@ -40,7 +40,7 @@ v-app-bar#app-toolbar-id(
               template(v-slot:activator='{ on, attrs }' @click="expand = !expand")
                 .gr1d--avatar(v-bind='attrs' v-on='on')
                   .gr1d--avatar-img
-                    v-avatar(:username='`${me.name}`')
+                    v-avatar(color="red") {{me.name}}
                   v-icon(dark)  mdi-chevron-down
               v-list
                 v-list-item(to="/apiconsumed")
@@ -50,7 +50,7 @@ v-app-bar#app-toolbar-id(
                   v-list-item-title(
                    
                   ).btn Ajuda
-                v-list-item( @click="logoutSend()")
+                v-list-item( @click="logoutSend()" to="/")
                   v-list-item-title.btn Sair
           
   template(v-slot:extension)
@@ -136,7 +136,6 @@ export default {
     }),
     logoutSend(){
       this.apiGet('/logout?token='+this.me.token);
-      this.$router.push({to: "/" });
 
     },
   }
