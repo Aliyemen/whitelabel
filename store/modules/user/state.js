@@ -1,7 +1,8 @@
 const state = () => ({
     response: {},
-    user:{ name: 'Ali Mohammed',
-
+    user:{ 
+        name: null,
+        token : null,
     },
 });
 export default state;

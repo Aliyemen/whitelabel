@@ -1,6 +1,6 @@
 <template lang="pug">
   v-footer(padless)
-    .doubt(v-if="showDoubt")
+    .doubt(v-if="fixed")
       v-container
         v-row(justify="space-around")
           v-col(cols="6")

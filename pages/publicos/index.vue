@@ -1,6 +1,6 @@
 <template lang="pug">
  div
-   h1 aqui esta Login
+   h1 aqui esta Dados Publicos
     
 </template>
 
@@ -9,6 +9,5 @@ export default {
   layout (context) {
     return 'home'
   }
-    
 }
 </script>

@@ -6,6 +6,7 @@ export const setUser = ({ commit }, payload) => {
     commit("setUser", payload);
 };
 
+
 export const apiGet = ({ commit }, payload) => {
     commit("setResponse", null);
     return Api.get(payload)

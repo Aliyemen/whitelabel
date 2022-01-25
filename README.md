@@ -7,16 +7,24 @@
 $ npm install
 
 # serve with hot reload at localhost:3000
-$ npm run dev -- --mode development
+$ npm run dev 
 
 
 # excutar test unitario
 $ npm run test
 
+# Obs :  usar parametro  -- --mode development  ou  -- --mode homologacao  ou  -- --mode production  o padrao vai ser sempre producao de .env :
+# - no local :
+$  npm run build    -- --mode development
+
+#- no ambiente homologação 
+$  npm run build    -- --mode homologacao
+
+#- no ambiente  Produção
+
+$   npm run build    -- --mode production  ou   npm run build  
 # build for production and launch server
 $ npm run build  
-
-npm run build -- --mode development  
 
 $ npm run start
 

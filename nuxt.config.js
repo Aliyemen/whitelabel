@@ -34,6 +34,8 @@ export default {
       { path: '~/components/help', extensions: ['vue'] },
       { path: '~/components/login', extensions: ['vue'] },
       { path: '~/components/register', extensions: ['vue'] },
+      { path: '~/components/headeres', extensions: ['vue'] },
+      { path: '~/components/footeres', extensions: ['vue'] },
     ]
   },
 
@@ -44,9 +46,6 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
   ],
-  vite: {
-    build: true
-  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios'    

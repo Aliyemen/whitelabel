@@ -14,7 +14,7 @@ v-app-bar#app-toolbar-id(
         height="32"
         width="120px"
         src="https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2022%2F01%2F3179b1043804c7652675892f7748b79a.png?alt=media&token=d43fef04-4ccb-4e81-8861-b4f86646382e"
-        nuxt to="/home')"
+        NuxtLink  to="/"
         )
       v-col( align="center")
         v-text-field.searchbar-width(
@@ -40,21 +40,18 @@ v-app-bar#app-toolbar-id(
               template(v-slot:activator='{ on, attrs }' @click="expand = !expand")
                 .gr1d--avatar(v-bind='attrs' v-on='on')
                   .gr1d--avatar-img
-                    qt-avatar(:username='`${me.name}`')
+                    v-avatar(:username='`${me.name}`')
                   v-icon(dark)  mdi-chevron-down
               v-list
-                v-list-item
+                v-list-item(to="/apiconsumed")
                   v-list-item-title(
-                    nuxt to="/apiconsumed"
                   ).btn Minha conta
-                v-list-item
+                v-list-item(to="/help")
                   v-list-item-title(
-                    nuxt to="/help"
+                   
                   ).btn Ajuda
-                v-list-item
-                  v-list-item-title(
-                    @click="logoutSend()"
-                  ).btn Sair
+                v-list-item( @click="logoutSend()")
+                  v-list-item-title.btn Sair
           
   template(v-slot:extension)
     v-container
@@ -79,48 +76,68 @@ v-app-bar#app-toolbar-id(
                 icon)
                 v-icon mdi-menu
             v-list
-              v-list-item(v-for="item in items", :key="item", link)
-                v-list-item-title(v-text="item")
+              v-list-item(v-for="( item, key ) in items", :key="key", link :to="item.to" )
+                v-list-item-title(v-text="item.title")
         v-col(cols="auto")
           v-row
             v-col.barra(cols="auto")
               v-divider.mx-2(vertical)
-            v-col(cols="auto")
-              a.grey--text.text--darken-3.mx-0.mx-lg-2.font-weight-medium Finanças
-            v-col(cols="auto")
-              a.grey--text.text--darken-3.mx-0.mx-lg-2.font-weight-medium Seguros e previdência
-            v-col(cols="auto")
-              a.grey--text.text--darken-3.mx-0.mx-lg-2.font-weight-medium Marketing
-            v-col(cols="auto")
-              a.grey--text.text--darken-3.mx-0.mx-lg-2.font-weight-medium Dados Públicos
-            v-col(cols="auto")
-              a.grey--text.text--darken-3.mx-0.mx-lg-2.font-weight-medium Comunicação
-            v-col(cols="auto")
-              a.grey--text.text--darken-3.mx-0.mx-lg-2.font-weight-medium Consulta Veicular
+            v-col(cols="auto" v-for="(item ,  index ) in items", :key="index", link :to="item.to" )
+              a.grey--text.text--darken-3.mx-0.mx-lg-2.font-weight-medium {{item.title}}
 </template>
 
 <script>
 // import {logout} from '../common/logout'
-import {mapGetters} from 'vuex'
+import {mapGetters, mapActions} from 'vuex'
 
 export default {
-   name: 'AreaHeader',
   computed: {
-    ...mapGetters("user", ["me"])
+    ...mapGetters({
+      me: "modules/user/me",
+    }),
+    text(){
+      return this.me.name;
+    }
   },
   data: () => ({
-    items: [
-      "Finanças",
-      "Seguros e previdência",
-      "Marketing",
-      "Dados Públicos",
-      "Comunicação",
-      "Consulta Veicular"
-    ],
+     items: [
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Finanças',
+          to: '/financas',
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Seguros e previdências',
+          to: '/seguro',
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Marketing',
+          to: '/marketing',
+        },
+         {
+          icon: 'mdi-chart-bubble',
+          title: 'Dados Públicos',
+          to: '/publicos',
+        },
+         {
+          icon: 'mdi-chart-bubble',
+          title: 'consulta Veicular',
+          to: '/consulta',
+        },
+      ],
+    rounded: true,
     expand: false,
   }),
   methods: {
+      ...mapActions({
+      apiGet: "modules/user/apiGet",
+    }),
     logoutSend(){
+      this.apiGet('/logout?token='+this.me.token);
+      this.$router.push({to: "/" });
+
     },
   }
 }

@@ -20,7 +20,6 @@ div
 <script>
 
 export default {
-  name: 'AriaLogado',
   data() {
     return {
     selectedItem: 0,

@@ -6,7 +6,6 @@
 <script>
 
 export default {
-  name: 'subHeader',
   data() {
     return {
       clipped: false,
@@ -20,28 +19,28 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Fianças',
-          to: '/inspire',
+          title: 'Finanças',
+          to: '/financas',
         },
         {
           icon: 'mdi-chart-bubble',
           title: 'Seguro e previdências',
-          to: '/inspire',
+          to: '/seguro',
         },
         {
           icon: 'mdi-chart-bubble',
           title: 'Marketing',
-          to: '/inspire',
+          to: '/marketing',
         },
          {
           icon: 'mdi-chart-bubble',
           title: 'Dados Públicos',
-          to: '/inspire',
+          to: '/publicos',
         },
          {
           icon: 'mdi-chart-bubble',
           title: 'consulta Veicular',
-          to: '/inspire',
+          to: '/consulta',
         },
       ],
     }
