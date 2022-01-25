@@ -8,6 +8,8 @@ $ npm install
 
 # serve with hot reload at localhost:3000
 $ npm run dev 
+# ou
+$ npm run dev  -- --mode development
 
 
 # excutar test unitario
