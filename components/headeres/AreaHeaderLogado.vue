@@ -40,7 +40,7 @@ v-app-bar#app-toolbar-id(
               template(v-slot:activator='{ on, attrs }' @click="expand = !expand")
                 .gr1d--avatar(v-bind='attrs' v-on='on')
                   .gr1d--avatar-img
-                    v-avatar(color="red") {{me.name}}
+                    v-avatar(color="red" size="35") {{me.name}}
                   v-icon(dark)  mdi-chevron-down
               v-list
                 v-list-item(to="/apiconsumed")
