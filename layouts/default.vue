@@ -1,7 +1,6 @@
 <template>
   <v-app dark>
     <AriaHeader />
-    
     <div class=" mt-16">
     <AreaSubHeader />
     </div>
@@ -15,6 +14,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'DefaultLayout',
   data() {
