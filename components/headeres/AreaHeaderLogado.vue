@@ -133,9 +133,11 @@ export default {
   methods: {
       ...mapActions({
       apiGet: "modules/user/apiGet",
+      logOutFake: "modules/user/logOutFake"
     }),
     logoutSend(){
-      this.apiGet('/logout?token='+this.me.token);
+      // this.apiGet('/logout?token='+this.me.token);
+      this.logOutFake()
 
     },
   }

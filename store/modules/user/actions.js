@@ -6,6 +6,14 @@ export const setUser = ({ commit }, payload) => {
     commit("setUser", payload);
 };
 
+export const logOutFake = ({ commit }) => {
+    commit("setUser", {name:null , token:null});
+};
+
+export const entrarFake = ({ commit }) => {
+    commit("setUser", {name:'ED' , token:'jhdsjhdjs4sd5dsjds'});
+};
+
 
 export const apiGet = ({ commit }, payload) => {
     commit("setResponse", null);
