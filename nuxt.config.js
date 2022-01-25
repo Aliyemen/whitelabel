@@ -40,9 +40,11 @@ export default {
     build: true
   },
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    '@nuxtjs/axios'    
+  ],
   axios :{
-    baseURL: 'http:localhost:3000'
+    baseURL: process.env.VUE_APP_API_URL
 
   },
 

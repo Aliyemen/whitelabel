@@ -1,9 +1,6 @@
 <template>
   <v-app dark>
-    <AreaHeader />
-    <div class=" mt-16">
-    <AreaSubHeader />
-    </div>
+    <AreaHeaderLogado />
     <v-main>
       <v-container>
         <Nuxt />
