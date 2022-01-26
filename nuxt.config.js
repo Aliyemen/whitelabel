@@ -36,6 +36,7 @@ export default {
       { path: '~/components/register', extensions: ['vue'] },
       { path: '~/components/headeres', extensions: ['vue'] },
       { path: '~/components/footeres', extensions: ['vue'] },
+      { path: '~/components/home', extensions: ['vue'] },
     ]
   },
 

@@ -40,7 +40,7 @@ v-app-bar#app-toolbar-id(
     v-container
       v-row(align="center")
         v-col(cols="auto")
-          v-menu(:key="text" :rounded="rounded" offset-y)
+          v-menu(:key="me.name" :rounded="rounded" offset-y)
             template(v-slot:activator="{ attrs, on }")
               v-btn.border-opacity-10.ml-9(
                 v-if="$vuetify.breakpoint.lgAndUp"
