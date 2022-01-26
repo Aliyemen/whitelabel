@@ -1,13 +1,10 @@
-<template>
-  <v-app dark>
-    <AreaHeaderLogado />
-    <v-main>
-      <v-container>
-        <Nuxt />
-      </v-container>
-    </v-main>
-    <AreaFooter :fixed="fixed"/>
-  </v-app>
+<template lang="pug">
+  v-app( dark)
+    AreaHeaderLogado
+    v-main
+      v-container
+        Nuxt 
+    AreaFooter( :fixed="fixed")
 </template>
 
 <script>

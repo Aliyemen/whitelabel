@@ -1,6 +1,6 @@
 <template lang="pug">
  div
-   h1 aqui esta api de usuario
+    ApiUsuario
 
     
 </template>
@@ -8,7 +8,7 @@
 <script>
 export default {
   layout (context) {
-    return 'home'
+    return 'admin'
   }
 }
 </script>
