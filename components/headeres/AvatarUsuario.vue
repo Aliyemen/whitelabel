@@ -14,7 +14,7 @@
                     template( v-slot:activator="{ on, attrs }")
                       span( class="white--text text-h6 text-uppercase" v-bind="attrs"  v-on="on") {{nomeUsuario}}
                     span {{me.name}}
-              v-icon( :class="admin ?'.grey-darken-3' :'.deep-orange lighten-5'")  mdi-chevron-down
+              v-icon( :color="admin ?' grey-darken-3' :'brown lighten-5'")  mdi-chevron-down
     
           v-list
             v-list-item(to="/apiconsumed")
