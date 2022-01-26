@@ -1,7 +1,7 @@
 <template lang="pug">
  div
    h1 aqui esta Login
-   v-btn(v-if=" !user || !user.name" @click="logIn()") Enterar fake
+   v-btn(v-if="!user || !user.name" @click="logIn()") Entrar fake
     
 </template>
 
@@ -23,7 +23,6 @@ export default {
     }),
     logIn(){
       this.logInFake();
-      
     }
    }
   

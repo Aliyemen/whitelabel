@@ -12,7 +12,7 @@ export const logOutFake = ({ commit }) => {
 
 export const logInFake = ({ commit }) => {
     let newObject =  {
-        name:'ED' , 
+        name:'Eduardo' , 
         token:'jhdsjhdjs4sd5dsjds'
     };
     commit("setUser", newObject);

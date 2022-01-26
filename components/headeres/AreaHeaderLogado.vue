@@ -34,24 +34,7 @@ v-app-bar#app-toolbar-id(
           v-col(cols="auto")
             v-btn.primary(nuxt to="/register") Cadastre-se
       v-col(cols="auto" v-if="me.name")
-        v-row(justify="center")
-          v-col(cols="auto")
-            v-menu(:key="text" :rounded="rounded" offset-y)
-              template(v-slot:activator='{ on, attrs }' @click="expand = !expand")
-                .gr1d--avatar(v-bind='attrs' v-on='on')
-                  .gr1d--avatar-img
-                    v-avatar(color="red" size="35") {{me.name}}
-                  v-icon(dark)  mdi-chevron-down
-              v-list
-                v-list-item(to="/apiconsumed")
-                  v-list-item-title(
-                  ).btn Minha conta
-                v-list-item(to="/help")
-                  v-list-item-title(
-                   
-                  ).btn Ajuda
-                v-list-item( @click="logoutSend()" to="/")
-                  v-list-item-title.btn Sair
+       AvatarUsuario
           
   template(v-slot:extension)
     v-container
@@ -88,16 +71,13 @@ v-app-bar#app-toolbar-id(
 
 <script>
 // import {logout} from '../common/logout'
-import {mapGetters, mapActions} from 'vuex'
+import {mapGetters} from 'vuex'
 
 export default {
   computed: {
     ...mapGetters({
       me: "modules/user/me",
-    }),
-    text(){
-      return this.me.name;
-    }
+    })
   },
   data: () => ({
      items: [
@@ -129,18 +109,7 @@ export default {
       ],
     rounded: true,
     expand: false,
-  }),
-  methods: {
-      ...mapActions({
-      apiGet: "modules/user/apiGet",
-      logOutFake: "modules/user/logOutFake"
-    }),
-    logoutSend(){
-      // this.apiGet('/logout?token='+this.me.token);
-      this.logOutFake()
-
-    },
-  }
+  })
 }
 </script>
 
@@ -173,26 +142,6 @@ export default {
 
 .logo{
   cursor: pointer;  
-}
-
-.gr1d--avatar {
-  display: flex;
-  gap: 10;
-}
-
-.gr1d--avatar-img {
-  border: 2px solid var(--v-primary-base);
-  border-radius: 40px;
-  height: 48px;
-  width: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.gr1d--avatar img {
-  height: 40px;
-  width: 40px;
 }
 
 .btn{
