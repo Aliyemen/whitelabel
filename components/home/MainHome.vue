@@ -24,7 +24,7 @@ div(class="mt-4")
                         xl=4
                         v-for="(product, index) of apis" :key="index"
                       )
-                        a(@click="details('apiDetails', product.id)")
+                        a( :to="'/apiDetails/'+product.id")
                           CardApi.mr-4(
                               :title='product.name'
                               :subtitle='product.provider'
@@ -52,11 +52,6 @@ export default {
       subtitle: 'Subtítulo da página',
     };
   },
-  methods: {
-    details(path, id){
-      this.$router.push({path, query: {id: id} })
-    }
-  }
 };
 </script>
 
