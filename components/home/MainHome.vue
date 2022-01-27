@@ -2,36 +2,36 @@
 div(class="mt-4")
   v-container.pa-0
       v-img.align-center(
-        height='500px' 
+        height='400px' 
         src='https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2022%2F01%2F1ecef7a726ed2d4b00032f2158144cf4?alt=media&token=9f1a1757-77ff-49e1-b7ca-2ba40b4ebbef'          
         )
         .px-8
           h1.gr1d--title {{ title }}
           h2.gr1d--subtitle {{ subtitle }}
-          v-container
-            .gr1d--section-title
-              .gr1d--texts
-                h3 Recomendados
-                h4  API&rsquo;s recomendadas pelo nosso time de especialistas
-              
-                v-container
-                    v-row(dense)
-                      v-col(
-                        xs=12
-                        sm=12
-                        md=6
-                        lg=4
-                        xl=4
-                        v-for="(product, index) of apis" :key="index"
-                      )
-                        a( :to="'/apiDetails/'+product.id")
-                          CardApi.mr-4(
-                              :title='product.name'
-                              :subtitle='product.provider'
-                              :description='product.description'
-                              img='https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2022%2F01%2F9dd167b2a68521cb930800ae16906724.png?alt=media&token=9c4984c7-2ff5-4b96-86f5-d66df26b2aba'
-                              :categories="['Categoria']"
-                            )
+  v-container
+    .gr1d--section-title
+      .gr1d--texts
+        h3 Recomendados
+        h4  API&rsquo;s recomendadas pelo nosso time de especialistas
+      
+        v-container
+            v-row(dense)
+              v-col(
+                xs=12
+                sm=12
+                md=6
+                lg=4
+                xl=4
+                v-for="(product, index) of apis" :key="index"
+              )
+                a( :to="'/apiDetails/'+product.id")
+                  CardApi.mr-4(
+                      :title='product.name'
+                      :subtitle='product.provider'
+                      :description='product.description'
+                      img='https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2022%2F01%2F9dd167b2a68521cb930800ae16906724.png?alt=media&token=9c4984c7-2ff5-4b96-86f5-d66df26b2aba'
+                      :categories="['Categoria']"
+                    )
               
           
 </template>
