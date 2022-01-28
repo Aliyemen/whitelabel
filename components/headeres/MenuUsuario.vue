@@ -3,7 +3,8 @@
     .gr1d--drawer-content
       .gr1d-header(v-bind:style="{ height: height + 'px' }")
         div
-          img(v-show='widthDrawer === 256' alt='logo' height='32px' src='https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2022%2F01%2F23abeb7fc8a4c0de6ace6b16d4e67e1f.png?alt=media&token=5026f7de-4c5c-4d26-8da5-310b56c05a71')
+          NuxtLink( to="/")
+            img(v-show='widthDrawer === 256' alt='logo' height='32px' src='https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2022%2F01%2F23abeb7fc8a4c0de6ace6b16d4e67e1f.png?alt=media&token=5026f7de-4c5c-4d26-8da5-310b56c05a71')
           v-btn.gr1d--btn-hover(v-show='widthDrawer !== 256' @click='changeDrawer' icon='')
             img(alt='btn drawer' src='https://firebasestorage.googleapis.com/v0/b/beyond-quoti.appspot.com/o/beyond%2F2021%2F12%2Fd97b860f13ecb3350697ad35adc1b19b?alt=media&token=7d7aab64-80f3-4327-bee7-c82911ca11e8')
         v-btn(v-if='widthDrawer === 256' @click='changeDrawer' icon='')
@@ -11,11 +12,16 @@
       .gr1d-content
         v-list.gr1d--list
           v-list-item-group(v-model='selectedItem' color='primary')
-            v-list-item(to='/apiconsumed')
+            v-list-item(to='/usuario')
               v-list-item-icon
-                v-icon mdi-code-tags
+                v-icon mdi-account
               v-list-item-content
-                v-list-item-title Minhas API’s
+                v-list-item-title Minha conta
+            v-list-item(to='/thema')
+              v-list-item-icon
+                v-icon mdi-wrench
+              v-list-item-content
+                v-list-item-title Thema
 </template>
 
 <script>

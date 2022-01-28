@@ -1,5 +1,5 @@
 <template lang="pug">
- v-row(justify="center")
+  v-row(justify="center")
       v-col( v-if ="admin" cols="auto" )
         NuxtLink( class="admin" to="/")
               v-icon.grey-darken-3  mdi-storefront-outline
@@ -17,9 +17,12 @@
               v-icon( :color="admin ?' grey-darken-3' :'brown lighten-5'")  mdi-chevron-down
     
           v-list
-            v-list-item(to="/apiconsumed")
+            v-list-item(to="/usuario")
               v-list-item-title(
               ).btn Minha conta
+            v-list-item(to="/apiconsumed")
+              v-list-item-title(
+              ).btn Minhas API's
             v-list-item(to="/help")
               v-list-item-title(
                 
@@ -30,7 +33,7 @@
 </template>
 <script>
 import {mapGetters, mapActions} from 'vuex'
-
+// usuario
 export default {
   props:{
     admin:{ 

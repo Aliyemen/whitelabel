@@ -37,6 +37,8 @@ export default {
       { path: '~/components/headeres', extensions: ['vue'] },
       { path: '~/components/footeres', extensions: ['vue'] },
       { path: '~/components/home', extensions: ['vue'] },
+      { path: '~/components/usuario', extensions: ['vue'] },
+      { path: '~/components/thema', extensions: ['vue'] },
     ]
   },
 
@@ -49,7 +51,7 @@ export default {
   ],
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios'    
+    '@nuxtjs/axios',
   ],
   axios :{
     baseURL: process.env.VUE_APP_API_URL
