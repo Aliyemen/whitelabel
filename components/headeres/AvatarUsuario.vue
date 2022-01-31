@@ -32,6 +32,7 @@
   
 </template>
 <script>
+import { stringify } from 'qs';
 import {mapGetters, mapActions} from 'vuex'
 // usuario
 export default {
@@ -49,7 +50,7 @@ export default {
       return this.me.name;
     },
     nomeUsuario(){
-      return !this.me &&  !this.me.name ? '': this.me.name.substring(0, 2) ;
+      return this.me && this.me.name && typeof this.me.name == 'string' ? this.me.name.substring(0, 2): '' ;
     }
   },
   data: () => ({

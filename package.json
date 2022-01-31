@@ -10,7 +10,9 @@
     "lint:prettier": "prettier --check .",
     "lint": "npm run lint:prettier",
     "lintfix": "prettier --write --list-different .",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+		"test:coverage": "jest --collectCoverage"
   },
   "dependencies": {
     "@nuxt/content": "^1.15.1",
