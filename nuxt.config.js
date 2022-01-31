@@ -57,6 +57,9 @@ export default {
     baseURL: process.env.VUE_APP_API_URL
 
   },
+  vite :{
+
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {

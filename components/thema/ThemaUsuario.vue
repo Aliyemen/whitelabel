@@ -1,9 +1,7 @@
 <template lang="pug">
     v-card(class="overflow-hidden" color="")
   
-        v-toolbar(
-        flat
-        color="")
+        v-toolbar( flat color="")
             v-icon mdi-wrench
             v-toolbar-title( class="font-weight-light")  Thema usuário
             v-spacer
@@ -76,15 +74,15 @@ export default {
             this.itemSelected = null
         },
         getNewColor(event) {
-            // if (this.itemSelected && event) {
-            //      for (let index = 0; index < this.itens.length; index++) {
-            //          if (this.itens[index].colum == this.itemSelected.colum) {
-            //              return this.itens[index].valor = event
-            //          };
+            if (this.itemSelected && event) {
+                 for (let index = 0; index < this.itens.length; index++) {
+                     if (this.itens[index].colum == this.itemSelected.colum) {
+                         return this.itens[index].valor = event
+                     };
                      
-            //      }
+                 }
                 
-            // }
+            }
         }
       }
     
