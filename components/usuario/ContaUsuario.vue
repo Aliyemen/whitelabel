@@ -74,10 +74,14 @@
                         item-text="nome"
                         label="UF")
                 v-col(cols="6")
+                    v-text-field(v-model="form.site"
+                        prepend-icon="mdi-web-box"
+                        label="Site "
+                        )
+                v-col(cols="6")
                     v-text-field(v-model="form.facebook"
                         prepend-icon="mdi-facebook"
                         label="Facebook "
-                        
                         )
                 v-col(cols="6")
                     v-text-field(v-model="form.linkedin"

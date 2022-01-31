@@ -36,7 +36,7 @@ export default {
         }
     },
     mounted() {
-        if(this.valor){
+        if(this.valor) {
             this.color = this.valor
         }
     },
@@ -61,6 +61,7 @@ export default {
         },
       },
       showColor () {
+        
         if (typeof this.color === 'string'){
              this.$emit('newColor',this.color)
              return this.color

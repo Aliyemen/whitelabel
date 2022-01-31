@@ -2,8 +2,10 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
+  // ssr: true,
   ssr: false,
-
+  // target: 'server',
+  target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - whitelabel',
@@ -52,6 +54,8 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
+    '@nuxt/content',
+    ['cookie-universal-nuxt', { alias: 'cookiz' }],
   ],
   axios :{
     baseURL: process.env.VUE_APP_API_URL

@@ -76,13 +76,13 @@ export default {
         getNewColor(event) {
             if (this.itemSelected && event) {
                  for (let index = 0; index < this.itens.length; index++) {
-                     if (this.itens[index].colum == this.itemSelected.colum) {
+                     if (this.itens[index].colum === this.itemSelected.colum) {
                          return this.itens[index].valor = event
                      };
                      
                  }
-                
             }
+            this.itemSelected = null 
         }
       }
     
